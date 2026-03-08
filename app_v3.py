@@ -684,7 +684,7 @@ def main():
     # ── Sidebar ────────────────────────────────────────────────────────────────
     with st.sidebar:
         st.header("⚙️ Setup")
-        groq_key = st.text_input(
+        groq_key = st.secrets.get("GROQ_API_KEY", "") or st.text_input(
             "Groq API Key",
             type="password",
             placeholder="gsk_…",
